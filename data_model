@@ -1,0 +1,165 @@
+/* 
+	JunQi game psuedo data model
+*/
+
+
+/*
+	Game - singleton
+*/
+Game : {
+	players : [
+		{
+			name       : "{{player_name}}",
+			player_id  : {{uid}},
+			pieces     : [{{pieces}}]	
+		}
+	],
+	turn    : {{player_id}},
+	order   : [{{player_ids}}]
+	game_id : {{uid}},
+	board   : [
+		{
+			type      : "{{land_type}}",
+			piece     : "{{piece_type | empty}}",
+			player_id : {{player_id}}
+		} // array of objects to describe game board grid
+	]
+},
+
+/*
+	Board - singleton of types
+Board : {
+	2Player : {
+
+	},
+	4Player : {
+
+	}
+},
+
+
+/*
+	Land Types
+*/
+land_types : {
+	Post : {
+		name : "Post",
+		movable : true,
+		landable : true,
+		cost : 1,
+		attackable : true
+	},
+	Road : {
+		name : "Road",
+		movable : true,
+		landable : true,
+		cost : 1,
+		attackable : true
+	},
+	Railroad : {
+		name : "Railroad",
+		movable : true,
+		landable : true,
+		cost : 0,
+		attackable : true
+	},
+	Campsite : {
+		name : "Campsite",
+		movable : true,
+		landable : true,
+		cost : 1,
+		attackable : false
+	},
+	Mountain : {
+		name : "Mountain",
+		movable : false,
+		landable : true,
+		cost : 0,
+		attackable : false
+	},
+	Frontline : {
+		name : "Frontline",
+		movable : true,
+		landable : false,
+		cost : 0,
+		attackable : false
+	},
+	Headquarters : {
+		name : "Headquarters",
+		movable : true,
+		landable : true,
+		cost : 0,
+		attackable : false
+	}
+},
+
+/*
+	Pieces
+*/
+piece_type : {
+	Field_Marshal : {
+		name  : "Field Marshal",
+		rank  : 9,
+		count : 1
+	},
+	General : {
+		name  : "General",
+		rank  : 8,
+		count : 1
+	},
+	Major_General : {
+		name  : "Major General",
+		rank  : 7,
+		count : 2
+	},
+	Brigadier_General : {
+		name  : "Brigadier General",
+		rank  : 6,
+		count : 2
+	},
+	Colonel : {
+		name  : "Colonel",
+		rank  : 5,
+		count : 2
+	},
+	Major : {
+		name  : "Major",
+		rank  : 4,
+		count : 2
+	},
+	Captain : {
+		name  : "Captain",
+		rank  : 3,
+		count : 3
+	},
+	Lieutenant : {
+		name  : "Lieutenant",
+		rank  : 2,
+		count : 3
+	},
+	Engineer : {
+		name  : "Engineer",
+		rank  : 1,
+		count : 2,
+		desc  : "Engineers are the only pieces which can turn corners when travelling along the Railroad. Engineers can also capture Landmines without being removed from the board"
+	},
+	Bomb : {
+		name  : "Bomb",
+		rank  : 0,
+		count : 2,
+		desc  : "Bombs in contact with any opponent piece, destroy both itself and the piece. They may capture the opponent's flag. Bombs cannot be placed on the front line (the first rank) during the initial set-up."
+	},
+	Landmine : {
+		name  : "Landmine",
+		rank  : 0,
+		count : 3,
+		desc  : "Landmines are immune to any attack, and cause the destruction of attacking pieces (except when attacked by an Engineer or destroyed by a bomb). Depending on the ruleset used, Landmines may or may not be removed from play following a capture. Landmines may only be placed on the fifth and sixth ranks during set-up. The Landmine cannot move from its original position."
+	},
+	Flag : {
+		name  : "Flag",
+		rank  : 0,
+		count : 1,
+		restricted_types : ["Headquarters"],
+		desc  : "The Flag must be placed on one of the two Headquarters spaces on the sixth rank. It cannot move. Its capture brings the victory of the attacker and ends the game.[3] Also, when Field Marshal is destroyed, the Flag must be revealed to the opposing player."
+	}
+}
