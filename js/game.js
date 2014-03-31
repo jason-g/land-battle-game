@@ -1,50 +1,71 @@
 // temporary testing function added to load
-$(window).load(function() {
-    var testGame = {
-        players : [
-            {
-                name : "Player 1", 
-                uuid : "1",
-                pieces : [
-                    {
-                        type : "Major",
-                        position_x : 1,
-                        position_y : 1
-                    },{
-                        type : "Colonel",
-                        position_x : 10,
-                        position_y : 1
-                    },{
-                        type : "Flag",
-                        position_x : 5,
-                        position_y : 2
-                    }
-                ]
-            },{
-                name : "Player 2", 
-                uuid : 2,
-                pieces : [
-                    {
-                        type : "Major",
-                        position_x : 1,
-                        position_y : 10
-                    },{
-                        type : "Colonel",
-                        position_x : 10,
-                        position_y : 10
-                    },{
-                        type : "Flag",
-                        position_x : 5,
-                        position_y : 9
-                    }
-                ]
-            }
-        ],
-        game_id : 1
-    };
-	Game.init(testGame);
-    Game.start();
+requirejs.config({
+    //By default load any module IDs from js/lib
+  baseUrl: '.',
+  //except, if the module ID starts with "app",
+  //load it from the js/app directory. paths
+  //config is relative to the baseUrl, and
+  //never includes a ".js" extension since
+  //the paths config could be for a directory.
+  paths: {
+    //app: '../app'
+    jquery: "third-party/jquery/dist/jquery",
+    crafty: "third-party/crafty/crafty"
+  },
+  urlArgs: "_=" + Math.random()
 });
+
+(function() {
+  "use strict";
+  console.log('foo');
+
+  define(["jquery", "crafty"], 
+    function($, Crafty) {
+        var testGame = {
+            players : [
+                {
+                    name : "Player 1", 
+                    uuid : "1",
+                    pieces : [
+                        {
+                            type : "Major",
+                            position_x : 1,
+                            position_y : 1
+                        },{
+                            type : "Colonel",
+                            position_x : 10,
+                            position_y : 1
+                        },{
+                            type : "Flag",
+                            position_x : 5,
+                            position_y : 2
+                        }
+                    ]
+                },{
+                    name : "Player 2", 
+                    uuid : 2,
+                    pieces : [
+                        {
+                            type : "Major",
+                            position_x : 1,
+                            position_y : 10
+                        },{
+                            type : "Colonel",
+                            position_x : 10,
+                            position_y : 10
+                        },{
+                            type : "Flag",
+                            position_x : 5,
+                            position_y : 9
+                        }
+                    ]
+                }
+            ],
+            game_id : 1
+        };
+      Game.init(testGame);
+      Game.start();
+  });
 
 /* 
     main game object
@@ -316,9 +337,7 @@ land_types : {
 }
 */
 
-
-
-
+})();
 
 
 

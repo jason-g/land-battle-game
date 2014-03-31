@@ -1,0 +1,27 @@
+{
+  "name": "land-battle-game",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jason-g/land-battle-game",
+  "description": "Multiplayer turn based version of the Chinese Land Battle Chess Client",
+  "main": "game.js",
+  "moduleType": [
+    "node"
+  ],
+  "authors": [
+    "jason-g",
+    "andrew-l-o"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "requirejs": null,
+    "jquery": null, 
+    "crafty": null
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
