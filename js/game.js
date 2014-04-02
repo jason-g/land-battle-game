@@ -32,7 +32,6 @@
     // add player
     add_player : function (player_name, pieces) {
         var player_count = Game.players.length;
-        console.dir(Player);
         // TBD verify number of players
         player_name = player_name ? player_name : player_name = 'Player ' + ++player_count;
         var new_player = Object.create(Player.prototype, {
@@ -84,6 +83,6 @@
             return v.toString(16);
         });
     }
-  }
+  };
   return Game;
 });

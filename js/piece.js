@@ -2,7 +2,7 @@
 define(["jquery"], 
 function($) {
   var Piece = {};
-  return Piece.prototype = {
+  Piece.prototype = {
     // TBD - use string lang file
     name : 'unnamed warrior',
     rank : 0,       
