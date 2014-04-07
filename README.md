@@ -11,6 +11,12 @@ Server side will use Node.js
 
 Examples
 --------
+after loading the page in browser use console:
+
+console.dir(require('js/game'));
+
+var Game = require('js/game');
+
 Game.players
 
 Game.players[1]
