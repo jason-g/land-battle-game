@@ -9,8 +9,8 @@ requirejs.config({
   //the paths config could be for a directory.
   paths: {
     //app: '../app'
-    jquery: "./third-party/jquery/dist/jquery",
-    crafty: "./third-party/crafty/crafty"
+    jquery: "./js/lib/jquery/dist/jquery",
+    crafty: "./js/lib/crafty/crafty"
   },
   urlArgs: "_=" + Math.random()
 });
