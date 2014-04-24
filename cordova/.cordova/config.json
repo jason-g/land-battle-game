@@ -1,7 +1,7 @@
 {
     "lib": {
         "www": {
-            "uri": "/Users/andrew/work/land/www",
+            "uri": "../www",
             "link": true
         }
     }
