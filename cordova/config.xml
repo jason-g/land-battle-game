@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.jroid.landwar" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Land Battle Game</name>
+    <description>
+        Land Battle Game 
+    </description>
+    <author href="https://github.com/jason-g/land-battle-game/">
+        Land Battle Game
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>

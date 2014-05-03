@@ -3,6 +3,6 @@
 npm install
 bower install
 
-cd third-party/crafty; npm install; grunt
+cd www/js/lib/crafty; npm install; grunt
 
 

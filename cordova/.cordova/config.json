@@ -1,0 +1,8 @@
+{
+    "lib": {
+        "www": {
+            "uri": "../www",
+            "link": true
+        }
+    }
+}
